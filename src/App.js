@@ -1,14 +1,31 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 
 import Header from './assets/images/header.svg';
 import Logo from './assets/logos/ravencase.svg';
+
 import Carousel1 from './assets/images/carousel1.svg';
 import Carousel2 from './assets/images/carousel2.svg';
 import Carousel3 from './assets/images/carousel3.svg';
+
+import Category from './assets/icons/category.svg';
+import FlashSale from './assets/icons/flashsale.svg';
+import BestSeller from './assets/icons/bestseller.svg';
+import AllPromos from './assets/icons/allpromos.svg';
+
+import Showcase1 from './assets/images/showcase1.svg';
+import Showcase2 from './assets/images/showcase2.svg';
+import Showcase3 from './assets/images/showcase3.svg';
+import Showcase4 from './assets/images/showcase4.svg';
 
 export default function App() {
   const [carousel] = useState([
@@ -46,6 +63,144 @@ export default function App() {
       ),
     },
   ]);
+
+  const [menuButton] = useState([
+    {
+      menu: (
+        <TouchableOpacity style={[styles.menuButton, styles.categoryButton]}>
+          <View style={styles.centerItem}>
+            <Category width={35} height={35} />
+          </View>
+        </TouchableOpacity>
+      ),
+      title: 'Category',
+    },
+    {
+      menu: (
+        <TouchableOpacity style={[styles.menuButton, styles.flashSaleButton]}>
+          <View style={styles.centerItem}>
+            <FlashSale width={35} height={35} />
+          </View>
+        </TouchableOpacity>
+      ),
+      title: 'Flash Sale',
+    },
+    {
+      menu: (
+        <TouchableOpacity style={[styles.menuButton, styles.bestSellerButton]}>
+          <View style={styles.centerItem}>
+            <BestSeller width={35} height={35} />
+          </View>
+        </TouchableOpacity>
+      ),
+      title: 'Best Seller',
+    },
+    {
+      menu: (
+        <TouchableOpacity style={[styles.menuButton, styles.allPromosButton]}>
+          <View style={styles.centerItem}>
+            <AllPromos width={35} height={35} />
+          </View>
+        </TouchableOpacity>
+      ),
+      title: 'All Promos',
+    },
+  ]);
+
+  const [showcaseItem] = useState([
+    {
+      showcase: (
+        <TouchableOpacity
+          style={[styles.showcaseItem, styles.showcase1Background]}>
+          <Showcase1
+            width={138}
+            height={134}
+            style={{marginTop: 6, alignSelf: 'center'}}
+          />
+          <View style={{marginTop: 10, marginLeft: 15}}>
+            <Text style={styles.showcaseItemTitle}>
+              RGB Astronaut{'\n'}ASTRO-7
+            </Text>
+            <View style={styles.favoriteIcon}>
+              <Text style={styles.showcaseItemPrice}>Rp99.000</Text>
+              <TouchableOpacity>
+                <Icon name={'heart-o'} size={22} color={'black'} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ),
+    },
+    {
+      showcase: (
+        <TouchableOpacity
+          style={[styles.showcaseItem, styles.showcase2Background]}>
+          <Showcase2
+            width={138}
+            height={134}
+            style={{marginTop: 6, alignSelf: 'center'}}
+          />
+          <View style={{marginTop: 10, marginLeft: 15}}>
+            <Text style={styles.showcaseItemTitle}>
+              Adult Groot{'\n'}MARVEL-9
+            </Text>
+            <View style={styles.favoriteIcon}>
+              <Text style={styles.showcaseItemPrice}>Rp99.000</Text>
+              <TouchableOpacity>
+                <Icon name={'heart-o'} size={22} color={'black'} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ),
+    },
+    {
+      showcase: (
+        <TouchableOpacity
+          style={[styles.showcaseItem, styles.showcase3Background]}>
+          <Showcase3
+            width={138}
+            height={134}
+            style={{marginTop: 6, alignSelf: 'center'}}
+          />
+          <View style={{marginTop: 10, marginLeft: 15}}>
+            <Text style={styles.showcaseItemTitle}>
+              Baba Yaga{'\n'}FORTNITE-16
+            </Text>
+            <View style={styles.favoriteIcon}>
+              <Text style={styles.showcaseItemPrice}>Rp99.000</Text>
+              <TouchableOpacity>
+                <Icon name={'heart-o'} size={22} color={'black'} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ),
+    },
+    {
+      showcase: (
+        <TouchableOpacity
+          style={[styles.showcaseItem, styles.showcase4Background]}>
+          <Showcase4
+            width={138}
+            height={134}
+            style={{marginTop: 6, alignSelf: 'center'}}
+          />
+          <View style={{marginTop: 10, marginLeft: 15}}>
+            <Text style={styles.showcaseItemTitle}>
+              Sniper Girl{'\n'}PUBG-2
+            </Text>
+            <View style={styles.favoriteIcon}>
+              <Text style={styles.showcaseItemPrice}>Rp99.000</Text>
+              <TouchableOpacity>
+                <Icon name={'heart-o'} size={22} color={'black'} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ),
+    },
+  ]);
   return (
     <View>
       <View style={styles.header}>
@@ -73,28 +228,8 @@ export default function App() {
           autoplay={true}
           autoplayTimeout={4}
           paginationStyle={{bottom: 10}}
-          dot={
-            <View
-              style={{
-                backgroundColor: '#F1F3F6',
-                width: 10,
-                height: 10,
-                borderRadius: 5,
-                marginRight: 4,
-              }}
-            />
-          }
-          activeDot={
-            <View
-              style={{
-                backgroundColor: '#1C252E',
-                width: 10,
-                height: 10,
-                borderRadius: 5,
-                marginRight: 4,
-              }}
-            />
-          }>
+          dot={<View style={styles.dot} />}
+          activeDot={<View style={styles.activeDot} />}>
           {carousel.map((row, index) => (
             <View style={{flexDirection: 'row'}} key={index}>
               {row.img}
@@ -102,7 +237,7 @@ export default function App() {
                 <Text style={styles.carTitle}>New Bundle!</Text>
                 <Text style={styles.carItems}>{row.title}</Text>
                 <Text style={styles.carDesc}>{row.desc}</Text>
-                <TouchableOpacity style={styles.carButton}>
+                <TouchableOpacity style={styles.viewMoreButton}>
                   <Text style={styles.carButtonText}>Details</Text>
                 </TouchableOpacity>
               </View>
@@ -114,6 +249,48 @@ export default function App() {
           <View style={styles.carIndicatorNonactive}></View>
           <View style={styles.carIndicatorNonactive}></View>
         </View> */}
+      </View>
+
+      <View
+        style={{
+          marginTop: 20,
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+        }}>
+        {menuButton.map((row, index) => (
+          <View key={index}>
+            {row.menu}
+            <Text style={styles.menuTitle}>{row.title}</Text>
+          </View>
+        ))}
+      </View>
+
+      <View>
+        <View style={styles.showcaseHeader}>
+          <Text
+            style={{
+              fontFamily: 'Montserrat-Bold',
+              fontSize: 18,
+              marginTop: 7,
+            }}>
+            New Designs
+          </Text>
+          <TouchableOpacity style={styles.viewMoreButton}>
+            <View style={styles.centerItem}>
+              <Text style={styles.viewMoreText}>View More</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: 15, marginLeft: 25}}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {showcaseItem.map((row, index) => (
+              <View key={index} style={styles.showcaseItem}>
+                {row.showcase}
+              </View>
+            ))}
+          </ScrollView>
+        </View>
       </View>
     </View>
   );
@@ -193,7 +370,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Regular',
     fontSize: 12,
   },
-  carButton: {
+  viewMoreButton: {
     backgroundColor: '#1C252E',
     width: 75,
     height: 30,
@@ -207,23 +384,111 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 7,
   },
-  indicatorCarAlign: {
-    flexDirection: 'row',
-    alignSelf: 'center',
-    marginVertical: 8,
-  },
-  carIndicatorActive: {
-    backgroundColor: '#1C252E',
-    borderRadius: 12 / 2,
-    width: 12,
-    height: 12,
-    marginRight: 5,
-  },
-  carIndicatorNonactive: {
+  // indicatorCarAlign: {
+  //   flexDirection: 'row',
+  //   alignSelf: 'center',
+  //   marginVertical: 8,
+  // },
+  // // carIndicatorActive: {
+  // //   backgroundColor: '#1C252E',
+  // //   borderRadius: 12 / 2,
+  // //   width: 12,
+  // //   height: 12,
+  // //   marginRight: 5,
+  // // },
+  // // carIndicatorNonactive: {
+  // //   backgroundColor: '#F1F3F6',
+  // //   borderRadius: 12 / 2,
+  // //   width: 12,
+  // //   height: 12,
+  // //   marginRight: 5,
+  // // },
+  dot: {
     backgroundColor: '#F1F3F6',
-    borderRadius: 12 / 2,
-    width: 12,
-    height: 12,
-    marginRight: 5,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginRight: 4,
+  },
+  activeDot: {
+    backgroundColor: '#1C252E',
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginRight: 4,
+  },
+  menuButton: {
+    width: 75,
+    height: 75,
+    borderRadius: 20,
+  },
+  categoryButton: {
+    backgroundColor: '#FFB672',
+  },
+  flashSaleButton: {
+    backgroundColor: '#D586B4',
+  },
+  bestSellerButton: {
+    backgroundColor: '#8A9CCC',
+  },
+  allPromosButton: {
+    backgroundColor: '#5EB5C9',
+  },
+  centerItem: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  menuTitle: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 12,
+    alignSelf: 'center',
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  viewMoreText: {
+    color: '#FFF',
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 10,
+  },
+  showcaseHeader: {
+    marginTop: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 25,
+  },
+
+  showcase1Background: {
+    backgroundColor: '#92C7D950',
+  },
+  showcase2Background: {
+    backgroundColor: '#F65F6025',
+  },
+  showcase3Background: {
+    backgroundColor: '#D6D5F575',
+  },
+  showcase4Background: {
+    backgroundColor: '#F6825125',
+  },
+  showcaseItem: {
+    marginRight: 15,
+    borderRadius: 15,
+    width: 150,
+    height: 230,
+  },
+  showcaseItemTitle: {
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 12,
+  },
+  showcaseItemPrice: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 12,
+    marginTop: 10,
+  },
+  favoriteIcon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 15,
   },
 });
