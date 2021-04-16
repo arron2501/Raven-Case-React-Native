@@ -253,7 +253,7 @@ export default function Home() {
 
       <View
         style={{
-          marginTop: 20,
+          marginTop: 30,
           flexDirection: 'row',
           justifyContent: 'space-evenly',
         }}>
@@ -282,7 +282,7 @@ export default function Home() {
           </TouchableOpacity>
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 15, marginLeft: 25}}>
+        <View style={{flexDirection: 'row', marginTop: 20, marginLeft: 25}}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {showcaseItem.map((row, index) => (
               <View key={index} style={styles.showcaseItem}>
@@ -310,6 +310,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginStart: 15,
     marginEnd: 15,
+    marginTop: 15,
   },
   boxSearch: {
     width: 212,

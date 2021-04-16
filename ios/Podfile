@@ -12,6 +12,10 @@ target 'RavenCase' do
     :hermes_enabled => false
   )
 
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'RavenCaseTests' do
     inherit! :complete
     # Pods for testing
