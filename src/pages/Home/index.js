@@ -7,6 +7,10 @@ import {
   ScrollView,
 } from 'react-native';
 
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 
@@ -202,97 +206,99 @@ export default function Home() {
     },
   ]);
   return (
-    <View>
-      <View style={styles.header}>
-        <Header width={411} height={170} />
-      </View>
-      <View style={styles.itemsHeader}>
-        <Logo width={75} height={34} style={{marginTop: 30}} />
-        <TouchableOpacity style={styles.boxSearch}>
-          <View style={styles.itemsSearch}>
-            <Icon name="search" size={15} color={'#C4C4C4'} />
-            <Text style={styles.textSearch}>Search</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{marginTop: 30}}>
-          <View>
-            <Icon name="bell" size={24} color={'white'} />
-            <Text style={styles.notification}>5</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.boxCarousel}>
-        <Swiper
-          loop={true}
-          index={1}
-          autoplay={true}
-          autoplayTimeout={4}
-          paginationStyle={{bottom: 10}}
-          dot={<View style={styles.dot} />}
-          activeDot={<View style={styles.activeDot} />}>
-          {carousel.map((row, index) => (
-            <View style={{flexDirection: 'row'}} key={index}>
-              {row.img}
-              <View style={styles.textCarAlign}>
-                <Text style={styles.carTitle}>New Bundle!</Text>
-                <Text style={styles.carItems}>{row.title}</Text>
-                <Text style={styles.carDesc}>{row.desc}</Text>
-                <TouchableOpacity style={styles.viewMoreButton}>
-                  <Text style={styles.carButtonText}>Details</Text>
-                </TouchableOpacity>
-              </View>
+    <ScrollView>
+      <View>
+        <View style={styles.header}>
+          <Header width={411} height={170} />
+        </View>
+        <View style={styles.itemsHeader}>
+          <Logo width={75} height={34} style={{marginTop: 30}} />
+          <TouchableOpacity style={styles.boxSearch}>
+            <View style={styles.itemsSearch}>
+              <Icon name="search" size={15} color={'#C4C4C4'} />
+              <Text style={styles.textSearch}>Search</Text>
             </View>
-          ))}
-        </Swiper>
-        {/* <View style={styles.indicatorCarAlign}>
+          </TouchableOpacity>
+          <TouchableOpacity style={{marginTop: 30}}>
+            <View>
+              <Icon name="bell" size={24} color={'white'} />
+              <Text style={styles.notification}>5</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.boxCarousel}>
+          <Swiper
+            loop={true}
+            index={1}
+            autoplay={true}
+            autoplayTimeout={4}
+            paginationStyle={{bottom: 10}}
+            dot={<View style={styles.dot} />}
+            activeDot={<View style={styles.activeDot} />}>
+            {carousel.map((row, index) => (
+              <View style={{flexDirection: 'row'}} key={index}>
+                {row.img}
+                <View style={styles.textCarAlign}>
+                  <Text style={styles.carTitle}>New Bundle!</Text>
+                  <Text style={styles.carItems}>{row.title}</Text>
+                  <Text style={styles.carDesc}>{row.desc}</Text>
+                  <TouchableOpacity style={styles.viewMoreButton}>
+                    <Text style={styles.carButtonText}>Details</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
+          </Swiper>
+          {/* <View style={styles.indicatorCarAlign}>
           <View style={styles.carIndicatorActive}></View>
           <View style={styles.carIndicatorNonactive}></View>
           <View style={styles.carIndicatorNonactive}></View>
         </View> */}
-      </View>
+        </View>
 
-      <View
-        style={{
-          marginTop: 30,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-        }}>
-        {menuButton.map((row, index) => (
-          <View key={index}>
-            {row.menu}
-            <Text style={styles.menuTitle}>{row.title}</Text>
-          </View>
-        ))}
-      </View>
-
-      <View>
-        <View style={styles.showcaseHeader}>
-          <Text
-            style={{
-              fontFamily: 'Montserrat-Bold',
-              fontSize: 18,
-              marginTop: 7,
-            }}>
-            New Designs
-          </Text>
-          <TouchableOpacity style={styles.viewMoreButton}>
-            <View style={styles.centerItem}>
-              <Text style={styles.viewMoreText}>View More</Text>
+        <View
+          style={{
+            marginTop: 30,
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+          }}>
+          {menuButton.map((row, index) => (
+            <View key={index}>
+              {row.menu}
+              <Text style={styles.menuTitle}>{row.title}</Text>
             </View>
-          </TouchableOpacity>
+          ))}
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 20, marginLeft: 25}}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {showcaseItem.map((row, index) => (
-              <View key={index} style={styles.showcaseItem}>
-                {row.showcase}
+        <View>
+          <View style={styles.showcaseHeader}>
+            <Text
+              style={{
+                fontFamily: 'Montserrat-Bold',
+                fontSize: 18,
+                marginTop: 7,
+              }}>
+              New Designs
+            </Text>
+            <TouchableOpacity style={styles.viewMoreButton}>
+              <View style={styles.centerItem}>
+                <Text style={styles.viewMoreText}>View More</Text>
               </View>
-            ))}
-          </ScrollView>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{flexDirection: 'row', marginTop: 20, marginLeft: 25}}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              {showcaseItem.map((row, index) => (
+                <View key={index} style={styles.showcaseItem}>
+                  {row.showcase}
+                </View>
+              ))}
+            </ScrollView>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -346,8 +352,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   boxCarousel: {
-    width: 360,
-    height: 150,
+    width: wp('87%'),
+    height: hp('19%'),
     backgroundColor: '#FFF',
     borderRadius: 20,
     alignSelf: 'center',
@@ -419,8 +425,8 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
   menuButton: {
-    width: 75,
-    height: 75,
+    width: wp('18%'),
+    height: hp('9%'),
     borderRadius: 20,
   },
   categoryButton: {
