@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import SplashScreen from 'react-native-splash-screen';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {View, Text} from 'react-native';
@@ -53,6 +54,9 @@ function Profile() {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  useEffect(() => {
+    SplashScreen.hide();
+  });
   return (
     <NavigationContainer>
       <Tab.Navigator

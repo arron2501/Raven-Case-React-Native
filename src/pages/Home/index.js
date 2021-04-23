@@ -14,6 +14,8 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 
+import ProductDetails from '../ProductDetails';
+
 import Header from '../../assets/images/header.svg';
 import Logo from '../../assets/logos/ravencase.svg';
 
