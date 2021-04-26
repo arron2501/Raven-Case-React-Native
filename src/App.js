@@ -3,11 +3,7 @@ import SplashScreen from 'react-native-splash-screen';
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Home from './pages/Home';
-
-import {Platform, StatusBar} from 'react-native';
+import {View, Text, Platform, StatusBar} from 'react-native';
 
 StatusBar.setBarStyle('light-content');
 if (Platform.OS === 'android') {
@@ -15,19 +11,16 @@ if (Platform.OS === 'android') {
   StatusBar.setTranslucent(true);
 }
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Home from './pages/Home';
+import ProductDetails from './pages/ProductDetails';
+
 function Shop() {
-  return (
-    <View>
-      <Home />
-    </View>
-  );
+  return <Home />;
 }
 function Wishlist() {
-  return (
-    <View>
-      <Text>Wishlist</Text>
-    </View>
-  );
+  return <ProductDetails />;
 }
 function Cart() {
   return (
