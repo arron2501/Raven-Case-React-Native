@@ -15,6 +15,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
+import NewDesigns from './pages/NewDesigns';
+import SimilarProducts from './pages/SimilarProducts';
 
 function Shop() {
   return <Home />;
@@ -23,18 +25,10 @@ function Wishlist() {
   return <ProductDetails />;
 }
 function Cart() {
-  return (
-    <View>
-      <Text>Cart</Text>
-    </View>
-  );
+  return <NewDesigns />;
 }
 function Orders() {
-  return (
-    <View>
-      <Text>Orders</Text>
-    </View>
-  );
+  return <SimilarProducts />;
 }
 function Profile() {
   return (
