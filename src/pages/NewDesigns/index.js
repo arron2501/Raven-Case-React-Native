@@ -168,10 +168,8 @@ export default function NewDesigns() {
       <Text style={styles.newDesignsTitleText}>New Designs</Text>
       <View style={styles.container}>
         {showcaseItem.map((row, index) => (
-          <View style={styles.items}>
-            <View key={index} style={styles.showcaseItem}>
-              {row.showcase}
-            </View>
+          <View key={index} style={styles.items}>
+            <View style={styles.showcaseItem}>{row.showcase}</View>
           </View>
         ))}
       </View>

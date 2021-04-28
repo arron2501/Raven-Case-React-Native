@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import NewDesigns from './pages/NewDesigns';
 import SimilarProducts from './pages/SimilarProducts';
+import Reviews from './pages/Reviews';
 
 function Shop() {
   return <Home />;
@@ -31,11 +32,7 @@ function Orders() {
   return <SimilarProducts />;
 }
 function Profile() {
-  return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  );
+  return <Reviews />;
 }
 
 const Tab = createBottomTabNavigator();
