@@ -11,12 +11,91 @@ import ProductDetails from '../../pages/ProductDetails';
 const Nav = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function HomeStackRoute() {
+function BottomNav() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="ProductDetails" component={ProductDetails} />
-    </Stack.Navigator>
+    <Nav.Navigator
+      tabBarOptions={{
+        activeTintColor: '#1C252E',
+        inactiveTintColor: 'gray',
+        paddingVertical: 10,
+        style: {
+          height: 65,
+          paddingTop: 10,
+        },
+        labelStyle: {
+          fontFamily: 'Montserrat-SemiBold',
+          fontSize: 12,
+          marginBottom: 10,
+        },
+      }}
+      backBehavior="none">
+      <Nav.Screen
+        name="Shop"
+        component={Home}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="shopping-bag" size={20} color={color} />
+          ),
+        }}
+      />
+      <Nav.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="heart" size={20} color={color} />
+          ),
+          tabBarBadge: 12,
+          tabBarBadgeStyle: {
+            width: 16,
+            height: 16,
+            fontFamily: 'Montserrat-Bold',
+            fontSize: 8,
+          },
+        }}
+      />
+      <Nav.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="shopping-cart" size={20} color={color} />
+          ),
+          tabBarBadge: 5,
+          tabBarBadgeStyle: {
+            width: 16,
+            height: 16,
+            fontFamily: 'Montserrat-Bold',
+            fontSize: 8,
+          },
+        }}
+      />
+      <Nav.Screen
+        name="Orders"
+        component={Orders}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="list-ul" size={20} color={color} />
+          ),
+          tabBarBadge: 2,
+          tabBarBadgeStyle: {
+            width: 16,
+            height: 16,
+            fontFamily: 'Montserrat-Bold',
+            fontSize: 8,
+          },
+        }}
+      />
+      <Nav.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="user" size={20} color={color} />
+          ),
+        }}
+      />
+    </Nav.Navigator>
   );
 }
 
@@ -52,89 +131,15 @@ function Profile() {
 export default function Router() {
   return (
     <NavigationContainer>
-      <Nav.Navigator
-        tabBarOptions={{
-          activeTintColor: '#1C252E',
-          inactiveTintColor: 'gray',
-          paddingVertical: 10,
-          style: {
-            height: 65,
-            paddingTop: 10,
-          },
-          labelStyle: {
-            fontFamily: 'Montserrat-SemiBold',
-            fontSize: 12,
-            marginBottom: 10,
-          },
-        }}
-        backBehavior="none">
-        <Nav.Screen
-          name="Shop"
-          component={HomeStackRoute}
-          options={{
-            tabBarIcon: ({color, size}) => (
-              <Icon name="shopping-bag" size={20} color={color} />
-            ),
-          }}
+      <Stack.Navigator>
+        {/* Dibawah screen ini, BottomNav tidak akan visible */}
+        <Stack.Screen
+          name="BottomNav"
+          component={BottomNav}
+          options={{headerShown: false}}
         />
-        <Nav.Screen
-          name="Wishlist"
-          component={Wishlist}
-          options={{
-            tabBarIcon: ({color, size}) => (
-              <Icon name="heart" size={20} color={color} />
-            ),
-            tabBarBadge: 12,
-            tabBarBadgeStyle: {
-              width: 16,
-              height: 16,
-              fontFamily: 'Montserrat-Bold',
-              fontSize: 8,
-            },
-          }}
-        />
-        <Nav.Screen
-          name="Cart"
-          component={Cart}
-          options={{
-            tabBarIcon: ({color, size}) => (
-              <Icon name="shopping-cart" size={20} color={color} />
-            ),
-            tabBarBadge: 5,
-            tabBarBadgeStyle: {
-              width: 16,
-              height: 16,
-              fontFamily: 'Montserrat-Bold',
-              fontSize: 8,
-            },
-          }}
-        />
-        <Nav.Screen
-          name="Orders"
-          component={Orders}
-          options={{
-            tabBarIcon: ({color, size}) => (
-              <Icon name="list-ul" size={20} color={color} />
-            ),
-            tabBarBadge: 2,
-            tabBarBadgeStyle: {
-              width: 16,
-              height: 16,
-              fontFamily: 'Montserrat-Bold',
-              fontSize: 8,
-            },
-          }}
-        />
-        <Nav.Screen
-          name="Profile"
-          component={Profile}
-          options={{
-            tabBarIcon: ({color, size}) => (
-              <Icon name="user" size={20} color={color} />
-            ),
-          }}
-        />
-      </Nav.Navigator>
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
