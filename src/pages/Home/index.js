@@ -30,7 +30,7 @@ import Showcase2 from '../../assets/images/showcase2.svg';
 import Showcase3 from '../../assets/images/showcase3.svg';
 import Showcase4 from '../../assets/images/showcase4.svg';
 
-export default function Home() {
+export default function Home({navigation}) {
   const [carousel] = useState([
     {
       title: 'Couple Cases',
@@ -114,7 +114,8 @@ export default function Home() {
     {
       showcase: (
         <TouchableOpacity
-          style={[styles.showcaseItem, styles.showcase1Background]}>
+          style={[styles.showcaseItem, styles.showcase1Background]}
+          onPress={() => navigation.navigate('ProductDetails')}>
           <Showcase1
             width={138}
             height={134}

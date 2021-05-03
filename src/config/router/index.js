@@ -2,15 +2,24 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from '../../pages/Home';
+import ProductDetails from '../../pages/ProductDetails';
 
 const Nav = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-function Shop() {
-  return <Home />;
+function HomeStackRoute() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+    </Stack.Navigator>
+  );
 }
+
 function Wishlist() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -40,7 +49,7 @@ function Profile() {
   );
 }
 
-export default function BottomNav() {
+export default function Router() {
   return (
     <NavigationContainer>
       <Nav.Navigator
@@ -61,7 +70,7 @@ export default function BottomNav() {
         backBehavior="none">
         <Nav.Screen
           name="Shop"
-          component={Shop}
+          component={HomeStackRoute}
           options={{
             tabBarIcon: ({color, size}) => (
               <Icon name="shopping-bag" size={20} color={color} />

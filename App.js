@@ -3,7 +3,7 @@ import SplashScreen from 'react-native-splash-screen';
 import React, {useEffect} from 'react';
 import {Platform, StatusBar} from 'react-native';
 
-import NavBar from './components/NavBar';
+import Router from './src/config/router';
 
 // Supaya status barnya transparan
 StatusBar.setBarStyle('light-content');
@@ -17,5 +17,5 @@ export default function App() {
   useEffect(() => {
     SplashScreen.hide();
   });
-  return <NavBar />;
+  return <Router />;
 }
