@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+
 import Showcase1 from '../../assets/images/showcase1.svg';
 import Showcase2 from '../../assets/images/showcase2.svg';
 import Showcase3 from '../../assets/images/showcase3.svg';

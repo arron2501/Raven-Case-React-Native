@@ -7,12 +7,10 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DropDownPicker from 'react-native-dropdown-picker';
 
@@ -254,10 +252,6 @@ export default function ProductDetails() {
               fontSize: 12,
             }}
             dropDownMaxHeight={250}
-            // activeLabelStyle={{
-            //   fontFamily: 'Montserrat-Bold',
-            //   color: '#1C252E',
-            // }}
             dropDownStyle={{
               backgroundColor: '#F1F3F6',
               borderWidth: 0,

@@ -1,16 +1,13 @@
 {
-    "recommendations": [
-        "formulahendry.auto-rename-tag",
-        "formulahendry.auto-complete-tag",
-        "coenraads.bracket-pair-colorizer-2",
-        "softwaredotcom.swdc-vscode",
-        "naumovs.color-highlight",
-        "dsznajder.es7-react-js-snippets",
-        "oderwat.indent-rainbow",
-        "pkief.material-icon-theme",
-        "eserozvataf.one-dark-pro-monokai-darker",
-        "christian-kohler.path-intellisense",
-        "esbenp.prettier-vscode",
-        "streetsidesoftware.code-spell-checker"
-    ]
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-complete-tag",
+    "coenraads.bracket-pair-colorizer-2",
+    "naumovs.color-highlight",
+    "dsznajder.es7-react-js-snippets",
+    "pkief.material-icon-theme",
+    "eserozvataf.one-dark-pro-monokai-darker",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode"
+  ]
 }

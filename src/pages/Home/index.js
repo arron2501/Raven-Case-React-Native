@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -249,11 +248,6 @@ export default function Home() {
               </View>
             ))}
           </Swiper>
-          {/* <View style={styles.indicatorCarAlign}>
-          <View style={styles.carIndicatorActive}></View>
-          <View style={styles.carIndicatorNonactive}></View>
-          <View style={styles.carIndicatorNonactive}></View>
-        </View> */}
         </View>
 
         <View
@@ -391,25 +385,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 7,
   },
-  // indicatorCarAlign: {
-  //   flexDirection: 'row',
-  //   alignSelf: 'center',
-  //   marginVertical: 8,
-  // },
-  // // carIndicatorActive: {
-  // //   backgroundColor: '#1C252E',
-  // //   borderRadius: 12 / 2,
-  // //   width: 12,
-  // //   height: 12,
-  // //   marginRight: 5,
-  // // },
-  // // carIndicatorNonactive: {
-  // //   backgroundColor: '#F1F3F6',
-  // //   borderRadius: 12 / 2,
-  // //   width: 12,
-  // //   height: 12,
-  // //   marginRight: 5,
-  // // },
   dot: {
     backgroundColor: '#F1F3F6',
     width: 10,
