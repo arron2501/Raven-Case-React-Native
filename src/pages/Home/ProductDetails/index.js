@@ -14,10 +14,10 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-import Showcase1 from '../../assets/images/showcase1.svg';
-import Showcase2 from '../../assets/images/showcase2.svg';
-import Showcase3 from '../../assets/images/showcase3.svg';
-import Showcase4 from '../../assets/images/showcase4.svg';
+import Showcase1 from '../../../assets/images/showcase1.svg';
+import Showcase2 from '../../../assets/images/showcase2.svg';
+import Showcase3 from '../../../assets/images/showcase3.svg';
+import Showcase4 from '../../../assets/images/showcase4.svg';
 
 export default function ProductDetails({navigation}) {
   const [showcaseItem] = useState([
@@ -136,7 +136,7 @@ export default function ProductDetails({navigation}) {
         </View> */}
 
         <Image
-          source={require('../../assets/images/product1.png')}
+          source={require('../../../assets/images/product1.png')}
           width={wp('100%')}
           height={320}
         />

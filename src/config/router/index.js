@@ -6,10 +6,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from '../../pages/Home';
-import ProductDetails from '../../pages/ProductDetails';
-import NewDesigns from '../../pages/NewDesigns';
-import SimilarProducts from '../../pages/SimilarProducts';
-import Reviews from '../../pages/Reviews';
+import ProductDetails from '../../pages/Home/ProductDetails';
+import NewDesigns from '../../pages/Home/NewDesigns';
+import SimilarProducts from '../../pages/Home/SimilarProducts';
+import Reviews from '../../pages/Home/Reviews';
 
 const Nav = createBottomTabNavigator();
 const Stack = createStackNavigator();

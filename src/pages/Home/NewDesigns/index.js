@@ -13,13 +13,13 @@ import {
 } from 'react-native-responsive-screen';
 import Swiper from 'react-native-swiper';
 
-import Carousel1 from '../../assets/images/carnewdesign1.svg';
-import Carousel2 from '../../assets/images/carnewdesign2.svg';
-import Carousel3 from '../../assets/images/carnewdesign3.svg';
-import Showcase1 from '../../assets/images/showcase1.svg';
-import Showcase2 from '../../assets/images/showcase2.svg';
-import Showcase3 from '../../assets/images/showcase3.svg';
-import Showcase4 from '../../assets/images/showcase4.svg';
+import Carousel1 from '../../../assets/images/carnewdesign1.svg';
+import Carousel2 from '../../../assets/images/carnewdesign2.svg';
+import Carousel3 from '../../../assets/images/carnewdesign3.svg';
+import Showcase1 from '../../../assets/images/showcase1.svg';
+import Showcase2 from '../../../assets/images/showcase2.svg';
+import Showcase3 from '../../../assets/images/showcase3.svg';
+import Showcase4 from '../../../assets/images/showcase4.svg';
 
 export default function NewDesigns() {
   const [carousel] = useState([
