@@ -19,7 +19,7 @@ import Showcase2 from '../../assets/images/showcase2.svg';
 import Showcase3 from '../../assets/images/showcase3.svg';
 import Showcase4 from '../../assets/images/showcase4.svg';
 
-export default function ProductDetails() {
+export default function ProductDetails({navigation}) {
   const [showcaseItem] = useState([
     {
       showcase: (
@@ -118,7 +118,7 @@ export default function ProductDetails() {
   return (
     <ScrollView>
       <View>
-        <View style={styles.header}></View>
+        {/* <View style={styles.header}></View>
         <View style={styles.itemsHeader}>
           <TouchableOpacity>
             <Icon name="arrow-left" size={24} color={'#1C252E'} />
@@ -133,13 +133,12 @@ export default function ProductDetails() {
             <Icon name="shopping-cart" size={24} color={'#1C252E'} />
             <Text style={styles.notification}>5</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         <Image
           source={require('../../assets/images/product1.png')}
           width={wp('100%')}
           height={320}
-          style={{marginTop: 15}}
         />
 
         <View style={styles.itemPrice}>
@@ -299,7 +298,9 @@ export default function ProductDetails() {
               }}>
               Similar Products
             </Text>
-            <TouchableOpacity style={styles.viewMoreButton}>
+            <TouchableOpacity
+              style={styles.viewMoreButton}
+              onPress={() => navigation.navigate('SimilarProducts')}>
               <View style={styles.centerItem}>
                 <Text style={styles.viewMoreText}>View More</Text>
               </View>
@@ -337,7 +338,9 @@ export default function ProductDetails() {
               }}>
               Latest Review
             </Text>
-            <TouchableOpacity style={styles.viewMoreButton}>
+            <TouchableOpacity
+              style={styles.viewMoreButton}
+              onPress={() => navigation.navigate('Reviews')}>
               <View style={styles.centerItem}>
                 <Text style={styles.viewMoreText}>View More</Text>
               </View>
@@ -548,58 +551,58 @@ export default function ProductDetails() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    width: wp('100%'),
-    height: 65,
-    backgroundColor: '#FFF',
-    marginTop: 30,
-    position: 'absolute',
-    top: 0,
-    flex: 1,
-    alignSelf: 'stretch',
-    right: 0,
-    left: 0,
-  },
-  itemsHeader: {
-    marginTop: 45,
-    marginEnd: 15,
-    marginStart: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  boxSearch: {
-    width: 212,
-    height: 34,
-    backgroundColor: '#F1F3F6',
-    borderRadius: 10,
-  },
-  itemsSearch: {
-    flexDirection: 'row',
-    paddingLeft: 10,
-    paddingVertical: 8,
-  },
-  textSearch: {
-    fontFamily: 'Montserrat-Regular',
-    fontSize: 12,
-    color: '#C4C4C4',
-    paddingLeft: 7,
-    paddingVertical: 1,
-  },
-  notification: {
-    position: 'absolute',
-    backgroundColor: '#FF0000',
-    borderRadius: 14 / 2,
-    width: 14,
-    height: 14,
-    top: 0,
-    right: 0,
-    color: '#FFF',
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 8,
-    paddingVertical: 2,
-    paddingHorizontal: 5,
-  },
+  // header: {
+  //   width: wp('100%'),
+  //   height: 65,
+  //   backgroundColor: '#FFF',
+  //   marginTop: 30,
+  //   position: 'absolute',
+  //   top: 0,
+  //   flex: 1,
+  //   alignSelf: 'stretch',
+  //   right: 0,
+  //   left: 0,
+  // },
+  // itemsHeader: {
+  //   marginTop: 45,
+  //   marginEnd: 15,
+  //   marginStart: 15,
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  //   justifyContent: 'space-around',
+  // },
+  // boxSearch: {
+  //   width: 212,
+  //   height: 34,
+  //   backgroundColor: '#F1F3F6',
+  //   borderRadius: 10,
+  // },
+  // itemsSearch: {
+  //   flexDirection: 'row',
+  //   paddingLeft: 10,
+  //   paddingVertical: 8,
+  // },
+  // textSearch: {
+  //   fontFamily: 'Montserrat-Regular',
+  //   fontSize: 12,
+  //   color: '#C4C4C4',
+  //   paddingLeft: 7,
+  //   paddingVertical: 1,
+  // },
+  // notification: {
+  //   position: 'absolute',
+  //   backgroundColor: '#FF0000',
+  //   borderRadius: 14 / 2,
+  //   width: 14,
+  //   height: 14,
+  //   top: 0,
+  //   right: 0,
+  //   color: '#FFF',
+  //   fontFamily: 'Montserrat-Bold',
+  //   fontSize: 8,
+  //   paddingVertical: 2,
+  //   paddingHorizontal: 5,
+  // },
   itemPrice: {
     width: wp('100%'),
     height: 125,

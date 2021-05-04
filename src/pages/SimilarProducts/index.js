@@ -111,25 +111,6 @@ export default function SimilarProducts() {
   ]);
   return (
     <ScrollView>
-      <View>
-        <View style={styles.header}></View>
-        <View style={styles.itemsHeader}>
-          <TouchableOpacity>
-            <Icon name="arrow-left" size={24} color={'#1C252E'} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.boxSearch}>
-            <View style={styles.itemsSearch}>
-              <Icon name="search" size={15} color={'#C4C4C4'} />
-              <Text style={styles.textSearch}>Search</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Icon name="shopping-cart" size={24} color={'#1C252E'} />
-            <Text style={styles.notification}>5</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <Text style={styles.similarProductsTitleText}>Similar Products</Text>
       <View style={styles.container}>
         {showcaseItem.map((row, index) => (
           <View key={index} style={styles.items}>
@@ -142,87 +123,10 @@ export default function SimilarProducts() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    width: wp('100%'),
-    height: 65,
-    backgroundColor: '#FFF',
-    marginTop: 30,
-    position: 'absolute',
-    top: 0,
-    flex: 1,
-    alignSelf: 'stretch',
-    right: 0,
-    left: 0,
-  },
-  itemsHeader: {
-    marginTop: 45,
-    marginEnd: 15,
-    marginStart: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  boxSearch: {
-    width: 212,
-    height: 34,
-    backgroundColor: '#F1F3F6',
-    borderRadius: 10,
-  },
-  itemsSearch: {
-    flexDirection: 'row',
-    paddingLeft: 10,
-    paddingVertical: 8,
-  },
-  textSearch: {
-    fontFamily: 'Montserrat-Regular',
-    fontSize: 12,
-    color: '#C4C4C4',
-    paddingLeft: 7,
-    paddingVertical: 1,
-  },
-  notification: {
-    position: 'absolute',
-    backgroundColor: '#FF0000',
-    borderRadius: 14 / 2,
-    width: 14,
-    height: 14,
-    top: 0,
-    right: 0,
-    color: '#FFF',
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 8,
-    paddingVertical: 2,
-    paddingHorizontal: 5,
-  },
-  similarProductsTitleText: {
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 24,
-    marginStart: 45,
-    marginTop: 30,
-    marginBottom: 10,
-  },
   centerItem: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  viewMoreButton: {
-    backgroundColor: '#1C252E',
-    width: 75,
-    height: 30,
-    borderRadius: 10,
-  },
-  viewMoreText: {
-    color: '#FFF',
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 10,
-  },
-  showcaseHeader: {
-    marginTop: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginHorizontal: 30,
   },
   showcase1Background: {
     backgroundColor: '#92C7D950',

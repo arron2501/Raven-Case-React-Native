@@ -5,17 +5,22 @@ import {Platform, StatusBar} from 'react-native';
 
 import Router from './src/config/router';
 
-// Supaya status barnya transparan
-StatusBar.setBarStyle('light-content');
+// Supaya icon di status barnya gelap
+StatusBar.setBarStyle('dark-content');
+// Hanya untuk OS Android
 if (Platform.OS === 'android') {
+  // Supaya status barnya transparan
   StatusBar.setBackgroundColor('rgba(0,0,0,0)');
   StatusBar.setTranslucent(true);
 }
 
-export default function App() {
+function App() {
   // Splash screen
   useEffect(() => {
     SplashScreen.hide();
   });
+  // Semua navigasi diatur dalam file router
   return <Router />;
 }
+
+export default App;

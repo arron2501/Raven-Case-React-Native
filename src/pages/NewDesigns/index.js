@@ -131,7 +131,7 @@ export default function NewDesigns() {
 
   return (
     <ScrollView>
-      <View style={styles.header}></View>
+      {/* <View style={styles.header}></View>
       <View style={styles.itemsHeader}>
         <TouchableOpacity>
           <Icon name="arrow-left" size={24} color={'#1C252E'} />
@@ -146,7 +146,7 @@ export default function NewDesigns() {
           <Icon name="shopping-cart" size={24} color={'#1C252E'} />
           <Text style={styles.notification}>5</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       <View style={styles.boxCarousel}>
         <Swiper
@@ -164,8 +164,6 @@ export default function NewDesigns() {
           ))}
         </Swiper>
       </View>
-
-      <Text style={styles.newDesignsTitleText}>New Designs</Text>
       <View style={styles.container}>
         {showcaseItem.map((row, index) => (
           <View key={index} style={styles.items}>
@@ -234,7 +232,6 @@ const styles = StyleSheet.create({
     width: wp('100%'),
     height: hp('24%'),
     backgroundColor: '#FFF',
-    marginTop: 15,
     alignSelf: 'center',
   },
   dot: {
