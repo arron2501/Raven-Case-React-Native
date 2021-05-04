@@ -6,9 +6,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import Carousel1 from '../../../assets/images/carousel1.svg';
-import Carousel2 from '../../../assets/images/carousel2.svg';
-import Carousel3 from '../../../assets/images/carousel3.svg';
+import Carousel1 from '../../../../assets/images/carousel1.svg';
+import Carousel2 from '../../../../assets/images/carousel2.svg';
+import Carousel3 from '../../../../assets/images/carousel3.svg';
 
 export default function Carousel() {
   const [carousel] = useState([

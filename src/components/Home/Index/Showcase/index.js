@@ -8,10 +8,10 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Showcase1 from '../../../assets/images/showcase1.svg';
-import Showcase2 from '../../../assets/images/showcase2.svg';
-import Showcase3 from '../../../assets/images/showcase3.svg';
-import Showcase4 from '../../../assets/images/showcase4.svg';
+import Showcase1 from '../../../../assets/images/showcase1.svg';
+import Showcase2 from '../../../../assets/images/showcase2.svg';
+import Showcase3 from '../../../../assets/images/showcase3.svg';
+import Showcase4 from '../../../../assets/images/showcase4.svg';
 
 export default function Showcase({toProductDetails, toNewDesigns}) {
   const [showcase] = useState([

@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import HeaderBackground from '../../../assets/images/header.svg';
-import Logo from '../../../assets/logos/ravencase.svg';
+import HeaderBackground from '../../../../assets/images/header.svg';
+import Logo from '../../../../assets/logos/ravencase.svg';
 
 export default function Header() {
   return (

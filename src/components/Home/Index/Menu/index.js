@@ -5,10 +5,10 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import Category from '../../../assets/icons/category.svg';
-import FlashSale from '../../../assets/icons/flashsale.svg';
-import BestSeller from '../../../assets/icons/bestseller.svg';
-import AllPromos from '../../../assets/icons/allpromos.svg';
+import Category from '../../../../assets/icons/category.svg';
+import FlashSale from '../../../../assets/icons/flashsale.svg';
+import BestSeller from '../../../../assets/icons/bestseller.svg';
+import AllPromos from '../../../../assets/icons/allpromos.svg';
 
 export default function Menu() {
   const [menu] = useState([

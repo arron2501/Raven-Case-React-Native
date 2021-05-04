@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 
-import Header from '../../components/Home/Header';
-import Carousel from '../../components/Home/Carousel';
-import Menu from '../../components/Home/Menu';
-import Showcase from '../../components/Home/Showcase';
+import Header from '../../components/Home/Index/Header';
+import Carousel from '../../components/Home/Index/Carousel';
+import Menu from '../../components/Home/Index/Menu';
+import Showcase from '../../components/Home/Index/Showcase';
 
 class Home extends Component {
   render() {
