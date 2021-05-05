@@ -6,10 +6,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from '../../pages/Home';
-import ProductDetails from '../../pages/Home/ProductDetails';
+import ProductDetails from '../../pages/ProductDetails';
 import NewDesigns from '../../pages/Home/NewDesigns';
-import SimilarProducts from '../../pages/Home/SimilarProducts';
-import Reviews from '../../pages/Home/Reviews';
+import SimilarProducts from '../../pages/ProductDetails/SimilarProducts';
+import Reviews from '../../pages/ProductDetails/Reviews';
 
 const Nav = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -189,7 +189,17 @@ class Router extends Component {
               },
             }}
           />
-          <Stack.Screen name="Reviews" component={Reviews} />
+          <Stack.Screen
+            name="Reviews"
+            component={Reviews}
+            options={{
+              headerTitle: 'Product Reviews',
+              headerTitleStyle: {
+                fontFamily: 'Montserrat-Bold',
+                fontSize: 18,
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );

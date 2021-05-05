@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
     marginTop: 25,
+    elevation: 2,
   },
   carImg: {
     width: 180,

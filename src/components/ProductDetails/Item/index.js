@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function Item() {
+export default function Item({toReviews}) {
   return (
     <View>
       <Image
-        source={require('../../../../assets/images/product1.png')}
+        source={require('../../../assets/images/product1.png')}
         style={styles.imgItem}
       />
       <View style={styles.priceItem}>
@@ -36,7 +36,7 @@ export default function Item() {
           </View>
 
           <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={toReviews}>
               <View style={styles.btnReviews}>
                 <Icon name="star" size={12} color={'#FEAC5E'} />
                 <Text style={styles.ratingItemTextStyle}>4.8</Text>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 125,
     backgroundColor: '#FFF',
+    marginBottom: 7,
   },
   priceItemAlign: {
     marginTop: 15,
