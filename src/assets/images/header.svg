@@ -1,5 +1,5 @@
 <svg width="411" height="170" viewBox="0 0 411 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0H411V140C411 156.569 397.569 170 381 170H30C13.4315 170 0 156.569 0 140V0Z" fill="url(#paint0_linear)"/>
+<path d="M0 0H411V170H0V0Z" fill="url(#paint0_linear)"/>
 <defs>
 <linearGradient id="paint0_linear" x1="0" y1="0" x2="382.847" y2="219.177" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FEAC5E"/>

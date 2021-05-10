@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   container: {
-    paddingStart: 30,
-    paddingEnd: 30,
+    paddingStart: 15,
+    paddingEnd: 15,
     flexDirection: 'row',
     width: '100%',
     height: 80,

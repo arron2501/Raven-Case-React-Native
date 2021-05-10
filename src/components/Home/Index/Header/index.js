@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <View>
       <View style={styles.container}>
-        <HeaderBackground style={styles.background} />
+        <HeaderBackground />
       </View>
       <View style={styles.headerItemsAlign}>
         <Logo style={styles.logo} />
@@ -37,10 +37,6 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     left: 0,
-  },
-  background: {
-    width: 411,
-    height: 170,
   },
   logo: {
     width: 75,

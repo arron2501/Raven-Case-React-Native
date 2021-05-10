@@ -59,8 +59,8 @@ export default function Carousel() {
 
 const styles = StyleSheet.create({
   container: {
-    width: wp('87%'),
-    height: hp('19%'),
+    width: wp('90%'),
+    height: hp('20%'),
     backgroundColor: '#FFF',
     borderRadius: 20,
     alignSelf: 'center',
